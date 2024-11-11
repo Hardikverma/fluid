@@ -188,12 +188,13 @@ class Audio {
         continue;
       }
 
+      let languageNames = new Intl.DisplayNames(['en'], {type: 'language'});
       const item = createElement(
         'li',
         {
           'data-track': this.meta.get(track).id,
         },
-        track.name,
+        languageNames.of(track.lang),
       );
 
       items.appendChild(item);

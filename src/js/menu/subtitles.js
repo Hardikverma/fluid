@@ -402,13 +402,15 @@ class Subtitles {
         continue;
       }
 
+      let subtitlesrclang = new Intl.DisplayNames(['en'], {type: 'language'});
       const item = createElement(
         'li',
         {
           'data-track': this.meta.get(track).id,
         },
-        track.label,
+        subtitlesrclang.of(track.srclang),
       );
+    
 
       items.appendChild(item);
 
